@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FIDO2 Authenticator</string>
+    <string name="nfc_service_description">FIDO2 Authenticator (NFC)</string>
+</resources>
