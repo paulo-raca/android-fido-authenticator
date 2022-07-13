@@ -1,7 +1,6 @@
 package com.inutilfutil.fido2.authenticator
 
 import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : Activity() {

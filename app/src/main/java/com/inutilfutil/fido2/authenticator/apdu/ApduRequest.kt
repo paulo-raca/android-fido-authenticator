@@ -1,6 +1,8 @@
 package com.inutilfutil.fido2.authenticator.apdu
 
+import android.util.Log
 import com.google.common.io.BaseEncoding
+import java.io.IOException
 import java.lang.IllegalArgumentException
 
 @kotlin.ExperimentalUnsignedTypes
@@ -9,14 +11,14 @@ data class ApduRequest(
     val ins: UByte,
     val p1: UByte,
     val p2: UByte,
-    val data: ByteArray?,
+    val data: UByteArray,
     val le: UShort
 ) {
 
     override fun toString(): String {
         var ret = "Apdu(CLA=%02x, INS=%02x, P1=%02x, P2=%02x".format(cla.toInt(), ins.toInt(), p1.toInt(), p2.toInt())
-        if (data != null) {
-            ret += ", Lc=%d, data=%s".format(data.size, BaseEncoding.base16().encode(data))
+        if (data.isNotEmpty()) {
+            ret += ", Lc=%d, data=%s".format(data.size, BaseEncoding.base16().encode(data.toByteArray()))
         } else {
             ret += ", Lc=0)"
         }
@@ -25,7 +27,7 @@ data class ApduRequest(
     }
 
     companion object {
-        fun parse(apdu: ByteArray): ApduRequest {
+        fun parse(apdu: UByteArray): ApduRequest {
             try {
                 var offset = 0
                 val cla = apdu[offset++].toUByte()
@@ -33,7 +35,7 @@ data class ApduRequest(
                 val p1 = apdu[offset++].toUByte()
                 val p2 = apdu[offset++].toUByte()
 
-                var data: ByteArray?
+                var data: UByteArray
                 var le: UShort
 
                 // Body: [ Lc | DATA ] | [ Le ]
@@ -41,20 +43,19 @@ data class ApduRequest(
                 if (apdu.size > offset) {
                     size = apdu[offset++].toInt()
                     if (size == 0) {
-                        size = (apdu[offset].toInt().shl(8).or(apdu[offset + 1].toInt()))
+                        size = (apdu[offset].toUInt().shl(8).or(apdu[offset + 1].toUInt())).toInt()
                         offset += 2
                     }
                 }
 
                 if (offset + size == apdu.size) {
                     // Whole buffer was consumed: No input data, the size actually refers to the max response size (Le)
-                    data = null
+                    data = UByteArray(0)
                     le = size.toUShort()
                 } else {
                     // Copy input data, and maybe read the the max response size afterwards (Le)
-                    data = ByteArray(size)
-                    System.arraycopy(apdu, offset, data, 0, size)
-                    offset += size
+                    data = apdu.copyOfRange(offset, offset+size)
+                    offset += size.toInt()
 
                     if (offset == apdu.size) {
                         le = 0.toUShort()
