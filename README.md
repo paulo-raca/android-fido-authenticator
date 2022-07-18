@@ -21,6 +21,7 @@ Project Status
 
 ### User interface
 - [ ] Show details of the site/user being enrolled / verified
+- [ ] Perform user confirmation before enrollment / verification
 
 References
 ----------

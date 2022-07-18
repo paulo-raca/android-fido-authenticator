@@ -1,10 +1,10 @@
-package com.inutilfutil.fido2.authenticator
+package com.inutilfutil.fido.authenticator
 
 import com.google.common.base.Charsets
 import com.google.common.io.BaseEncoding
-import com.inutilfutil.fido2.authenticator.apdu.ApduRequest
-import com.inutilfutil.fido2.authenticator.crypto.Certificate
-import com.inutilfutil.fido2.authenticator.crypto.KeyGenerator
+import com.inutilfutil.fido.authenticator.transport.apdu.ApduRequest
+import com.inutilfutil.fido.authenticator.crypto.KeyGenerator
+import com.inutilfutil.fido.authenticator.protocol.CTAPAuthenticator
 import org.bouncycastle.jce.provider.BouncyCastleProvider
 import org.junit.Assert
 import org.junit.Test
@@ -28,7 +28,7 @@ class TestCertificate {
 
     @Test
     fun testCtap1Register() {
-        val request = ApduRequest(cla=0x00.toUByte(), ins=CTAPAuthenticator.CTAP1_INS_REGISTRATION_REQUEST, p1=0.toUByte(), p2=0.toUByte(), data=UByteArray(64), le=UShort.MAX_VALUE)
+        val request = ApduRequest(cla=0x00.toUByte(), ins= CTAPAuthenticator.CTAP1_INS_REGISTRATION_REQUEST, p1=0.toUByte(), p2=0.toUByte(), data=UByteArray(64), le=UShort.MAX_VALUE)
         val response = CTAPAuthenticator().processCtap1(request)
         print(response)
     }

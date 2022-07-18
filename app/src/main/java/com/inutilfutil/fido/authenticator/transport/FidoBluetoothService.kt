@@ -1,4 +1,4 @@
-package com.inutilfutil.fido2.authenticator.comm
+package com.inutilfutil.fido.authenticator.transport
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -18,9 +18,8 @@ import android.os.ParcelUuid
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.os.BuildCompat
-import com.inutilfutil.fido2.authenticator.BuildConfig
-import com.inutilfutil.fido2.authenticator.FidoApplication
-import com.inutilfutil.fido2.authenticator.util.bleUuid
+import com.inutilfutil.fido.authenticator.FidoApplication
+import com.inutilfutil.fido.authenticator.util.bleUuid
 import java.util.*
 
 class FidoBluetoothService : Service() {

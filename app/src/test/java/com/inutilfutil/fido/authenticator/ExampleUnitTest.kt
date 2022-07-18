@@ -1,9 +1,8 @@
-package com.inutilfutil.fido2.authenticator
+package com.inutilfutil.fido.authenticator
 
 import com.google.common.io.BaseEncoding
 import org.junit.Test
 
-import org.junit.Assert.*
 import java.io.FileOutputStream
 
 /**

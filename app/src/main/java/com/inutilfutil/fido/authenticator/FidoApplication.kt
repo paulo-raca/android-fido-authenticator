@@ -1,9 +1,10 @@
-package com.inutilfutil.fido2.authenticator
+package com.inutilfutil.fido.authenticator
 
 import android.app.Application
-import com.inutilfutil.fido2.authenticator.crypto.Certificate
-import com.inutilfutil.fido2.authenticator.crypto.KeyManager
-import com.inutilfutil.fido2.authenticator.crypto.RamKeyManager
+import com.inutilfutil.fido.authenticator.crypto.Certificate
+import com.inutilfutil.fido.authenticator.crypto.KeyManager
+import com.inutilfutil.fido.authenticator.crypto.RamKeyManager
+import com.inutilfutil.fido.authenticator.protocol.CTAPAuthenticator
 
 class FidoApplication : Application() {
     companion object {

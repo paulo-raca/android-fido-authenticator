@@ -1,8 +1,8 @@
-package com.inutilfutil.fido2.authenticator
+package com.inutilfutil.fido.authenticator
 
 import android.app.Activity
 import android.os.Bundle
-import com.inutilfutil.fido2.authenticator.comm.FidoForegroundService
+import com.inutilfutil.fido.authenticator.transport.FidoForegroundService
 
 class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {

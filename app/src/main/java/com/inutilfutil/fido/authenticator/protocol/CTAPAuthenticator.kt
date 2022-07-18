@@ -1,10 +1,10 @@
-package com.inutilfutil.fido2.authenticator
+package com.inutilfutil.fido.authenticator.protocol
 
 import android.util.Log
 import com.google.common.base.Charsets
-import com.inutilfutil.fido2.authenticator.apdu.ApduRequest
-import com.inutilfutil.fido2.authenticator.apdu.ApduResponse
-import com.inutilfutil.fido2.authenticator.crypto.*
+import com.inutilfutil.fido.authenticator.transport.apdu.ApduRequest
+import com.inutilfutil.fido.authenticator.transport.apdu.ApduResponse
+import com.inutilfutil.fido.authenticator.crypto.*
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.security.Signature

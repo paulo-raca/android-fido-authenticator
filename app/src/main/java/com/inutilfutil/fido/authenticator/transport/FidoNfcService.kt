@@ -1,12 +1,12 @@
-package com.inutilfutil.fido2.authenticator.comm
+package com.inutilfutil.fido.authenticator.transport
 
 import android.nfc.cardemulation.HostApduService
 import android.os.Bundle
 import android.util.Log
-import com.inutilfutil.fido2.authenticator.CTAPAuthenticator
-import com.inutilfutil.fido2.authenticator.FidoApplication
-import com.inutilfutil.fido2.authenticator.apdu.ApduRequest
-import com.inutilfutil.fido2.authenticator.apdu.ApduResponse
+import com.inutilfutil.fido.authenticator.protocol.CTAPAuthenticator
+import com.inutilfutil.fido.authenticator.FidoApplication
+import com.inutilfutil.fido.authenticator.transport.apdu.ApduRequest
+import com.inutilfutil.fido.authenticator.transport.apdu.ApduResponse
 
 @kotlin.ExperimentalUnsignedTypes
 class FidoNfcService : HostApduService() {

@@ -1,4 +1,4 @@
-package com.inutilfutil.fido2.authenticator.crypto;
+package com.inutilfutil.fido.authenticator.crypto;
 
 interface KeyManager {
     /**

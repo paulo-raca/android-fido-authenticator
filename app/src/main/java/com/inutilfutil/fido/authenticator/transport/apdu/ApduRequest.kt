@@ -1,4 +1,4 @@
-package com.inutilfutil.fido2.authenticator.apdu
+package com.inutilfutil.fido.authenticator.transport.apdu
 
 import com.google.common.io.BaseEncoding
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.inutilfutil.fido2.authenticator">
+    package="com.inutilfutil.fido.authenticator">
 
     <!-- <uses-feature android:name="android.hardware.type.watch" /> -->
     <uses-feature
@@ -34,15 +34,15 @@
         </activity>
 
         <service
-            android:name=".comm.FidoForegroundService"
+            android:name=".transport.FidoForegroundService"
             android:exported="false" />
 
         <service
-            android:name=".comm.FidoBluetoothService"
+            android:name=".transport.FidoBluetoothService"
             android:exported="false" />
 
         <service
-            android:name=".comm.FidoNfcService"
+            android:name=".transport.FidoNfcService"
             android:exported="true"
             android:permission="android.permission.BIND_NFC_SERVICE">
             <intent-filter>
@@ -51,7 +51,7 @@
 
             <meta-data
                 android:name="android.nfc.cardemulation.host_apdu_service"
-                android:resource="@xml/fido2_nfc_service" />
+                android:resource="@xml/fido_nfc_service" />
 
         </service>
     </application>

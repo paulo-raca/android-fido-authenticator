@@ -1,4 +1,4 @@
-package com.inutilfutil.fido2.authenticator.util
+package com.inutilfutil.fido.authenticator.util
 
 import android.util.Log
 import java.util.*

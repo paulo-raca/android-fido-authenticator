@@ -1,4 +1,4 @@
-package com.inutilfutil.fido2.authenticator.comm
+package com.inutilfutil.fido.authenticator.transport
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -10,8 +10,8 @@ import android.os.Build
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.inutilfutil.fido2.authenticator.FidoApplication
-import com.inutilfutil.fido2.authenticator.R
+import com.inutilfutil.fido.authenticator.FidoApplication
+import com.inutilfutil.fido.authenticator.R
 
 class FidoForegroundService : Service() {
     companion object {

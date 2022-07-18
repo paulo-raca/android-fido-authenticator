@@ -1,4 +1,4 @@
-package com.inutilfutil.fido2.authenticator.crypto;
+package com.inutilfutil.fido.authenticator.crypto;
 
 import android.util.Log
 import com.google.common.io.BaseEncoding

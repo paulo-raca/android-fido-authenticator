@@ -1,4 +1,4 @@
-package com.inutilfutil.fido2.authenticator.cbor
+package com.inutilfutil.fido.authenticator.protocol.cbor
 
 class AuthenticatorGetInfoResponse (
 
