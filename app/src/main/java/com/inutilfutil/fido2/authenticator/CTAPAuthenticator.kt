@@ -9,7 +9,6 @@ import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.security.Signature
 import java.security.interfaces.ECPublicKey
-import java.util.*
 
 
 class CTAPAuthenticator(

@@ -1,7 +1,5 @@
 package com.inutilfutil.fido2.authenticator.crypto;
 
-import java.security.KeyPair
-
 interface KeyManager {
     /**
      * Generate a new KeyHandle bound to the specific Application Hash

@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">FIDO2 Authenticator</string>
+    <string name="app_name">FIDO Authenticator</string>
     <string name="nfc_service_description">FIDO2 Authenticator (NFC)</string>
+
+    <string name="fg_service_title">@string/app_name</string>
+    <string name="fg_service_msg">Authenticator Ready</string>
+    <string name="fg_channel_name">FIDO Foreground Service Notification</string>
 </resources>

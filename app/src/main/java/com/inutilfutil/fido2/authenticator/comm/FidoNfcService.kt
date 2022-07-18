@@ -1,18 +1,17 @@
-package com.inutilfutil.fido2.authenticator
+package com.inutilfutil.fido2.authenticator.comm
 
 import android.nfc.cardemulation.HostApduService
 import android.os.Bundle
 import android.util.Log
+import com.inutilfutil.fido2.authenticator.CTAPAuthenticator
+import com.inutilfutil.fido2.authenticator.FidoApplication
 import com.inutilfutil.fido2.authenticator.apdu.ApduRequest
 import com.inutilfutil.fido2.authenticator.apdu.ApduResponse
-import java.io.ByteArrayInputStream
-import java.io.IOException
-import java.io.InputStream
 
 @kotlin.ExperimentalUnsignedTypes
-class Fido2NfcService : HostApduService() {
+class FidoNfcService : HostApduService() {
     companion object {
-        private val TAG = Fido2NfcService::class.qualifiedName
+        private val TAG = FidoNfcService::class.qualifiedName
     }
 
     override fun onCreate() {
@@ -30,7 +29,7 @@ class Fido2NfcService : HostApduService() {
 
         // CTAP1 Command
         if (request.cla.toInt() == 0x0) {
-            return Fido2Application.ctap.processCtap1(request)
+            return FidoApplication.ctap.processCtap1(request)
         }
 
         // CTAP2 Command

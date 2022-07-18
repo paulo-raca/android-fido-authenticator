@@ -4,10 +4,8 @@ import android.app.Application
 import com.inutilfutil.fido2.authenticator.crypto.Certificate
 import com.inutilfutil.fido2.authenticator.crypto.KeyManager
 import com.inutilfutil.fido2.authenticator.crypto.RamKeyManager
-import org.bouncycastle.jce.provider.BouncyCastleProvider
-import java.security.Security
 
-class Fido2Application : Application() {
+class FidoApplication : Application() {
     companion object {
         init {
             /*Security.removeProvider("BC")
@@ -18,5 +16,10 @@ class Fido2Application : Application() {
         val keyManager: KeyManager = RamKeyManager()
         val certificate: Certificate = Certificate.makeRandom("Fido2 Issuer", "Fido2")
         val ctap: CTAPAuthenticator = CTAPAuthenticator(keyManager, certificate)
+        lateinit var instance: FidoApplication
+    }
+
+    init {
+        FidoApplication.instance = this
     }
 }

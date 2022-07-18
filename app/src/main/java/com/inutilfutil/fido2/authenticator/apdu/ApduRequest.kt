@@ -1,9 +1,6 @@
 package com.inutilfutil.fido2.authenticator.apdu
 
-import android.util.Log
 import com.google.common.io.BaseEncoding
-import java.io.IOException
-import java.lang.IllegalArgumentException
 
 @kotlin.ExperimentalUnsignedTypes
 data class ApduRequest(
