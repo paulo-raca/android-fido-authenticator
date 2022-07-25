@@ -5,7 +5,7 @@ FIDO2 authenticators are still a novelty: They aren't all that cheap, can only s
 
 Android has all the hardware goodies to be an excellent FIDO2 authenticator.
 
-This project aims to implement CTAP2 over NFC, BLE and Bluetooth-HID.
+This project aims to implement CTAP2 over NFC, BLE and HID.
 
 Project Status
 --------------
@@ -18,6 +18,7 @@ Project Status
 - [x] NFC: Working
 - [ ] BLE: Android [actively prevents the implementation of a FIDO over BLE for non-system apps](https://android.googlesource.com/platform/packages/apps/Bluetooth/+/6f7f9bbf46acaaf266537256da4d0345909ea1c4/src/com/android/bluetooth/gatt/GattService.java#3217) 😫
 - [ ] HID: It is possible to implement a [HID transport over Bluetooth](https://developer.android.com/reference/android/bluetooth/BluetoothHidDevice).
+- [ ] /dev/uhid: This project doesn't need to be Android-exclusive ;)
 
 ### User interface
 - [ ] Show details of the site/user being enrolled / verified
