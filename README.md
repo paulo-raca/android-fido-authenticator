@@ -5,7 +5,7 @@ FIDO2 authenticators are still a novelty: They aren't all that cheap, can only s
 
 Android has all the hardware goodies to be an excellent FIDO2 authenticator.
 
-This project aims to implement CTAP2 over BLE and NFC.
+This project aims to implement CTAP2 over NFC, BLE and Bluetooth-HID.
 
 Project Status
 --------------
